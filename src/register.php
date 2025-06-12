@@ -1,82 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register</title>
+  <link rel="stylesheet" href="register.css">
 </head>
 <body>
-  
- <style>
- h1 {text-align: center;}
-    form {text-align: center;}
-    label {text-align: center;}
-</style>
 
-  
-    
-<div  id="box"> 
+  <div class="form-wrapper">
+    <div class="form-box">
+      <h1>Register</h1>
 
-  <h1 style="color:black;">Register</h1>
-
-  <form action="register.php" method="post" >
-
-	<input class="textInput" type="email" name='email' placeholder="E-mail" >   <br>
-	<input class="textInput" type="password" name='password' placeholder="Wachtwoord">  <br><br>
-
-    <input type="submit" name='knop' value="Register" >
-
-</div>  
-    
-    </form>
-
-
-
-</div>
+      <form action="register.php" method="post">
+        <input class="textInput" type="email" name="email" placeholder="E-mail" required><br>
+        <input class="textInput" type="password" name="password" placeholder="Wachtwoord" required><br>
+        <input class="submitButton" type="submit" name="knop" value="Register">
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>
+
+
+
 <?php
 $servername = "mysql";
 $username = "root";
 $password = "password";
 $dbname = "forms";
 
+$conn = new mysqli($servername, $username, $password, $dbname);  
 
-$conn = new mysqli($servername, $username, $password, $dbname );  
+if (isset($_POST['knop'])) {
+    $email = $_POST["email"];
+    $wachtwoord = $_POST["password"];
 
-  
-if(isset($_POST['knop']) ){
-       $email = $_POST["email"];
-       $wachtwoord = $_POST["password"];
-       
-
-        if(empty($email)){
-            echo "email is niet ingevoerd";
-        }
-        elseif(empty($wachtwoord)){
-            echo"password is niet ingevoerd";
-        }
-        else
-        {
-            echo"hallo <br>";
-            echo $_POST["email"];
-            $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO Account (Email, Password) VALUES ('$email', '$hash')";
-            
-        try
-            {
-                mysqli_query($conn, $sql);
-                echo'Het werkt';
-            }
-            catch(mysqli_sql_exception){
-                echo'werkt niet';
-            }
-        }
-
+    if (empty($email)) {
+        echo "Email is niet ingevoerd";
+    } elseif (empty($wachtwoord)) {
+        echo "Wachtwoord is niet ingevoerd";
+    } else {
+        
+        $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
         
-        
+        $stmt = $conn->prepare("INSERT INTO Account (Email, Password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $email, $hash);
+
+        try {
+            $stmt->execute();
+            echo "Account is geregistreerd.";
+        } catch (mysqli_sql_exception $e) {
+            echo "Registratie mislukt: " . $e->getMessage();
+        }
+
+        $stmt->close();
     }
-
+}
 ?>
+    

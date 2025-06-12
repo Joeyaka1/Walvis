@@ -26,10 +26,10 @@
 
   <input type="submit" name='knop' value="Login" >
 
-</div>  
+ 
     
     </form>
-
+</div> 
 
 
 </div>
@@ -48,10 +48,23 @@ $dbname = "forms";
 if(isset($_POST['knop']) ){ 
   $email = $_POST["email"];
   $wachtwoord = $_POST["password"];
-  $log = "SELECT * FROM Account WHERE Email = '$email'";
+  $log = "SELECT * FROM Account WHERE Email = '?'";
   $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
 $conn = new mysqli($servername, $username, $password, $dbname ); 
+
+$stmt = $conn->prepare("SELECT Password FROM Account WHERE Email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+$stmt->bind_result($hash);
+$stmt->fetch();
+
+
+
+
 
 if($email == $log){
   echo'log in succesvol';

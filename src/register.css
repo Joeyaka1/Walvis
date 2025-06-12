@@ -1,0 +1,66 @@
+/* Algemene achtergrond */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #8B0000, #000000);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Centrale wrapper voor verticale uitlijning */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Border en achtergrond rond alles */
+.form-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 320px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+
+/* Titel */
+.form-box h1 {
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* Inputvelden */
+.textInput {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* Verzendknop */
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #aa0000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #ff0000;
+}
