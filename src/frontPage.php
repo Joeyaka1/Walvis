@@ -1,3 +1,9 @@
+<?php if (isset($_GET['message']) && $_GET['message'] === 'verwijderd'): ?>
+  <script>
+    alert("Je account is succesvol verwijderd.");
+  </script>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +13,6 @@
   <title>Home Page</title>
 </head>
 <body>
-  
- 
-
   
 <h1>Home Page</h1>
 
@@ -25,6 +28,3 @@
 
 
 
-<?php 
-
-?>

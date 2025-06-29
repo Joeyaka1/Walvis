@@ -1,9 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #8B0000, #000000); /* Donkerrood naar zwart */
-  color: #ffffff; /* Witte tekst voor contrast */
+  font-family: Arial;
+  background: linear-gradient(to bottom, #8B0000, #000000); 
+  color: #ffffff; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,21 +11,21 @@ body {
   height: 100vh;
 }
 
-/* Titel */
+
 h1 {
   margin-bottom: 40px;
   font-size: 3em;
   text-shadow: 2px 2px 5px #000000;
 }
 
-/* Container voor knoppen/links */
+
 #knopjes {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Link-stijl */
+
 #knopjes a {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
