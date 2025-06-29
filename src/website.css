@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #8B0000, #000000);
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 40px;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.achtergrond,
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box,
+.form-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 360px; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-align: center;
+}
+
+.box h1,
+.form-box h1 {
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 4px #000000;
+}
+
+.gegevens-tabel {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border: 2px solid white;
+  color: white;
+  font-size: 14px;
+}
+
+.gegevens-tabel th,
+.gegevens-tabel td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: left;
+}
+
+.gegevens-tabel th {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40%;
+}
+
+.textInput {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.button,
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #aa0000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.button:hover,
+.submitButton:hover {
+  background-color: #ff0000;
+}
+
+.extra-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linkButton,
+#knopjes a {
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffffff;
+  border-radius: 6px 8px;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.linkButton:hover,
+#knopjes a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000000;
+  border-color: #ccc;
+}
+
+#knopjes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

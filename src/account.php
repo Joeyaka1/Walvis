@@ -24,7 +24,7 @@ $user = $result->fetch_assoc();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mijn Account</title>
-  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="website.css">
 </head>
 <body>
 
@@ -34,6 +34,15 @@ $user = $result->fetch_assoc();
     <p>Verander hier je account gegevens</p>
 
     <div class="extra-buttons">
+
+    <form action="username.php" method="post">
+        <button type="submit" class="linkButton">Username Veranderen</button>
+      </form>
+
+    <form action="email.php" method="post">
+        <button type="submit" class="linkButton">E-mail Veranderen</button>
+      </form>
+
       <form action="wachtwoord.php" method="post">
         <button type="submit" class="linkButton">Wachtwoord Veranderen</button>
       </form>

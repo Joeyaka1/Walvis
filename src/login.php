@@ -44,7 +44,7 @@ if ($stmt->num_rows > 0) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="website.css">
   <title>Document</title>
 </head>
 <body>

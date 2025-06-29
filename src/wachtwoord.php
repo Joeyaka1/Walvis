@@ -4,7 +4,7 @@ session_start();
 $loginError = "";
 
 if (!isset($_SESSION['email'])) {
-    $loginError = "Je moet ingelogd zijn om je wachtwoord te wijzigen.";
+    header("Location: login.php");
     exit;
 }
 
@@ -60,7 +60,7 @@ $conn->close();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="website.css">
   <title>Document</title>
 </head>
 <body>
